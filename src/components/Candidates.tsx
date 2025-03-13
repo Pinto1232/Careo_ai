@@ -9,9 +9,10 @@ import { BiPlus } from 'react-icons/bi';
 import { MdMoreHoriz } from 'react-icons/md';
 import { BsChatLeftText } from 'react-icons/bs';
 import { RiAttachmentLine } from 'react-icons/ri';
+import { Candidate } from './types/Candidate';
 
 const Candidates = () => {
-    const candidates = [
+    const candidates: Candidate[] = [
         {
             name: 'Skylar Calzoni',
             role: 'Nurse, Manchester',
@@ -40,6 +41,7 @@ const Candidates = () => {
         );
     }
 
+    
     return (
         <Grid container spacing={2} sx={{ padding: '16px' }}>
             <Grid item xs={12}>
