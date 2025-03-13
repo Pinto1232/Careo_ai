@@ -35,7 +35,7 @@ const Candidates = () => {
             avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
         },
     ];
-    
+
 
     if (!Array.isArray(candidates) || candidates.length === 0) {
         return (
@@ -58,7 +58,7 @@ const Candidates = () => {
                     }}
                 >
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <Typography sx={{ fontWeight: '700', fontSize: '14px' }}>
+                        <Typography sx={{ fontWeight: '700', fontSize: '16px', color: '#0F172A' }}>
                             Put Forward
                         </Typography>
                         <Box
@@ -69,6 +69,7 @@ const Candidates = () => {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
+                                justifyItems: 'center',
                                 borderRadius: '6px',
                                 color: '#27A376',
                                 fontSize: '15px',
@@ -109,9 +110,9 @@ const Candidates = () => {
                             }}
                         >
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <Avatar  alt={person.name} src={person.avatar}  sx={{ width: 32, height: 32 }} />
+                                <Avatar alt={person.name} src={person.avatar} sx={{ width: 32, height: 32 }} />
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                    <Typography sx={{ fontWeight: '600', color: '#111827' }}>
+                                    <Typography sx={{ fontWeight: '600', color: '#111827', fontSize: '16px' }}>
                                         {person.name || 'Unknown'}
                                     </Typography>
                                     <Typography sx={{ fontWeight: '400', fontSize: '12px', color: '#A0AEC0' }}>
@@ -125,7 +126,7 @@ const Candidates = () => {
                             <Box sx={{ display: 'flex', gap: '16px', marginLeft: '42px' }}>
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                     <BsChatLeftText size={16} color="#999" />
-                                    <Typography sx={{ fontSize: '12px', color: '#999' }}>
+                                    <Typography sx={{ fontSize: '12px', fontWeight: '400', color: '#A0AEC0' }}>
                                         {typeof person.comments === 'number' ? person.comments : 0}
                                     </Typography>
                                 </Box>
