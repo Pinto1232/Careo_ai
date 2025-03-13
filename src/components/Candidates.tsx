@@ -139,7 +139,7 @@ const Candidates = () => {
                                 </Box>
                             </Box>
                             <Box>
-                                <Box sx={{ cursor: 'pointer' }}>
+                                <Box sx={{ cursor: 'pointer', color: '#111827' }}>
                                     <MdMoreHoriz size={20} />
                                 </Box>
                             </Box>
