@@ -17,7 +17,6 @@ const Candidates = () => {
             role: 'Nurse, Manchester',
             comments: 3,
             likes: 1,
-
         },
         {
             name: 'Alfredo Gouse',
@@ -32,6 +31,14 @@ const Candidates = () => {
             likes: 2,
         },
     ];
+
+    if (!Array.isArray(candidates) || candidates.length === 0) {
+        return (
+            <Typography sx={{ padding: '16px', textAlign: 'center' }}>
+                No candidates available.
+            </Typography>
+        );
+    }
 
     return (
         <Grid container spacing={2} sx={{ padding: '16px' }}>
@@ -76,10 +83,9 @@ const Candidates = () => {
                     </Box>
                 </Box>
 
-
                 {candidates.map((person, index) => (
                     <Box
-                        key={person.name}
+                        key={person.name || index}
                         sx={{
                             backgroundColor: '#fff',
                             borderRadius: '10px',
@@ -96,37 +102,34 @@ const Candidates = () => {
                                 marginBottom: '8px',
                             }}
                         >
-
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <Avatar sx={{ width: 32, height: 32 }} />
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <Typography sx={{ fontWeight: '600', color: '#111827' }}>
-                                        {person.name}
+                                        {person.name || 'Unknown'}
                                     </Typography>
                                     <Typography sx={{ fontWeight: '400', fontSize: '12px', color: '#A0AEC0' }}>
-                                        {person.role}
+                                        {person.role || 'Unknown Role'}
                                     </Typography>
                                 </Box>
                             </Box>
                         </Box>
-
 
                         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                             <Box sx={{ display: 'flex', gap: '16px', marginLeft: '42px' }}>
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                     <BsChatLeftText size={16} color="#999" />
                                     <Typography sx={{ fontSize: '12px', color: '#999' }}>
-                                        {person.comments}
+                                        {typeof person.comments === 'number' ? person.comments : 0}
                                     </Typography>
                                 </Box>
 
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                                     <RiAttachmentLine size={16} color="#999" />
                                     <Typography sx={{ fontSize: '14px', color: '#A0AEC0' }}>
-                                        {person.likes}
+                                        {typeof person.likes === 'number' ? person.likes : 0}
                                     </Typography>
                                 </Box>
-
                             </Box>
                             <Box>
                                 <Box sx={{ cursor: 'pointer' }}>
@@ -134,7 +137,6 @@ const Candidates = () => {
                                 </Box>
                             </Box>
                         </Box>
-
                     </Box>
                 ))}
             </Grid>
