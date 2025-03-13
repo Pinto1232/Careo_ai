@@ -71,7 +71,7 @@ const Candidates = () => {
                                 alignItems: 'center',
                                 borderRadius: '6px',
                                 color: '#27A376',
-                                fontSize: '19px',
+                                fontSize: '15px',
                                 fontWeight: '700',
                             }}
                         >
