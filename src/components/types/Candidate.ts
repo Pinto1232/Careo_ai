@@ -3,4 +3,5 @@ export interface Candidate {
     role?: string;
     comments?: number;
     likes?: number;
+    avatar?: string;
 }

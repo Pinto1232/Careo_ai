@@ -18,20 +18,24 @@ const Candidates = () => {
             role: 'Nurse, Manchester',
             comments: 3,
             likes: 1,
+            avatar: 'https://randomuser.me/api/portraits/women/1.jpg',
         },
         {
             name: 'Alfredo Gouse',
             role: 'Nurse, Watford',
             comments: 1,
             likes: 0,
+            avatar: 'https://randomuser.me/api/portraits/men/2.jpg',
         },
         {
             name: 'James Carder',
             role: 'Nurse, Milton Keynes',
             comments: 0,
             likes: 2,
+            avatar: 'https://randomuser.me/api/portraits/men/3.jpg',
         },
     ];
+    
 
     if (!Array.isArray(candidates) || candidates.length === 0) {
         return (
@@ -41,7 +45,7 @@ const Candidates = () => {
         );
     }
 
-    
+
     return (
         <Grid container spacing={2} sx={{ padding: '16px' }}>
             <Grid item xs={12}>
@@ -67,7 +71,7 @@ const Candidates = () => {
                                 alignItems: 'center',
                                 borderRadius: '6px',
                                 color: '#27A376',
-                                fontSize: '12px',
+                                fontSize: '19px',
                                 fontWeight: '700',
                             }}
                         >
@@ -105,7 +109,7 @@ const Candidates = () => {
                             }}
                         >
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <Avatar sx={{ width: 32, height: 32 }} />
+                                <Avatar  alt={person.name} src={person.avatar}  sx={{ width: 32, height: 32 }} />
                                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                     <Typography sx={{ fontWeight: '600', color: '#111827' }}>
                                         {person.name || 'Unknown'}
